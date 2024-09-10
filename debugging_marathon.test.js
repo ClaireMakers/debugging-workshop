@@ -1,4 +1,4 @@
-const { countingSheep, removingIs, filteringSpies } = require("./debugging_marathon");
+const { countingSheep, removingIs, filteringSpies, greetSpanish, greetFrench } = require("./debugging_marathon");
 
 describe("PROBLEM 1 tests", () => {
     test("if there is only one sheep in the array, it returns 1", () => {
@@ -40,3 +40,14 @@ describe("PROBLEM 3 tests", () => {
     ]);
   });
 });
+
+describe("PROBLEM 4 tests", () => {
+  test('greetSpanish should return Hola', () => {
+    expect(greetSpanish("Steve")).toBe("Hola, Steve!");
+  });
+
+  test('greetFrench should return Bonjour', () => {
+    expect(greetSpanish("Lisa")).toBe("Bonjour, Lisa!");
+  });
+});
+

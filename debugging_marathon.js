@@ -49,17 +49,25 @@ const filteringSpies = (guestsArray) => {
     return noSpiesAllowed; 
 }
 
-//PROBLEM 3:
-/* */
-function myFunction() {
+//PROBLEM 4:
+/* This function returns a function that greets a user in a language that was predetermined
+*/
+function createGreeting(greeting) {
+    return function(name) {
+      return greeting + ", " + name + "!"
+    };
 }
+ 
+// Update these with a function that returns the correct greeting when called
+// greetSpanish("Leo") => Hola, Leo!
+// greetFrench("Sandra") => Bonjour, Sandra!
+const greetSpanish = null
+const greetFrench = null
 
-
-console.log(local);
-
-//Functions as values problem
 
 //nested object mistakes
+
+
 
 //array manipulation mistakes
 
@@ -73,7 +81,4 @@ console.log(local);
 
 //Scope problems - some function with scope errors and misplaced brackets
 
-//
-
-
-module.exports = { countingSheep, removingIs, filteringSpies };
+module.exports = { countingSheep, removingIs, filteringSpies, greetFrench, greetSpanish };
