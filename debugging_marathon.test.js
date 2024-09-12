@@ -1,4 +1,12 @@
-const { countingSheep, removingIs, filteringSpies, greetSpanish, greetFrench } = require("./debugging_marathon");
+const {
+  countingSheep,
+  removingIs,
+  filteringSpies,
+  greetSpanish, 
+  greetFrench, 
+  validatePostcode,
+  processStudentsGrades
+} = require("./debugging_marathon");
 
 describe("PROBLEM 1 tests", () => {
     test("if there is only one sheep in the array, it returns 1", () => {
@@ -47,7 +55,58 @@ describe("PROBLEM 4 tests", () => {
   });
 
   test('greetFrench should return Bonjour', () => {
-    expect(greetSpanish("Lisa")).toBe("Bonjour, Lisa!");
+    expect(greetFrench("Lisa")).toBe("Bonjour, Lisa!");
   });
 });
 
+
+describe("PROBLEM 5 tests", () => {
+  test('validatePostcode should return true if a valid UK postcode', () => {
+    const person = {
+      name: "Alice",
+      address: {
+          street: "123 Main St",
+          city: "Anytown",
+          postcode: "HA2 9SW"
+      }
+    };
+    expect(validatePostcode(person)).toEqual(true)
+  });
+
+  test('validatePostcode should return false if not a valid UK postcode', () => {
+    const person2 = {
+      name: "Alicia",
+      address: {
+          street: "123 Main St",
+          city: "Anytown",
+          postcode: "Yaaaaaas"
+      }
+    };
+    expect(validatePostcode(person2)).toEqual(false)
+  });
+
+  test('validatePostcocde should return an error message if no postcode passed in', () => {
+    const person3 = {
+      name: "Alicia",
+      address: {
+          street: "123 Main St",
+          city: "Anytown",
+      }
+    };
+    expect(validatePostcode(person3)).toBe("No postcode found");
+  })
+});
+
+describe("PROBLEM 5 tests", () => {
+  test('validatePostcocde should return an error message if no postcode passed in', () => {
+    const testStudents = [
+      { name: "Eve", grade: 70 },
+      { name: "Siddarth", grade: 45 },
+      { name: "Hannah", grade: 85 },
+      { name: "Abdallah", grade: 30 },
+      { name: "Marya", grade: 55 }
+    ];
+
+    expect(processStudentsGrades(testStudents)).toStrictEqual(['Eve', 'Hannah', 'Marya'])
+  })
+});

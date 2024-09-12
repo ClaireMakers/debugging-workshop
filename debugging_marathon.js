@@ -65,20 +65,56 @@ const greetSpanish = null
 const greetFrench = null
 
 
-//nested object mistakes
+//PROBLEM 5:
+/* This function takes a "person" and return true if a valid UK postcode, and false if not a valid UK postcode and "No postcode found" if postcode not found
+const person = {
+    name: "Alice",
+    address: {
+        street: "123 Main St",
+        city: "Anytown",
+        postcode: "PO5 0LK"
+    }
+};
+*/
+
+const validatePostcode = (postcode) => {
+    // A "regex" tests string to see if matches a given patten. This one validates UK postcodes
+    var regex = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
+    const isValid = regex.test(postcode);
+    return isValid
+}
+
+
+//PROBLEM 6:
+/* This function takes in an array of "students" and returns an array of students that passed
+
+INPUT
+const testStudents = [
+    { name: "Eve", grade: 70 },
+    { name: "Siddarth", grade: 45 },
+    { name: "Hannah", grade: 85 },
+    { name: "Abdallah", grade: 30 },
+    { name: "Marya", grade: 55 }
+];
+
+OUTPUT
+["Eve", "Hannah", "Marya"]
+*/
+function processStudentsGrades(students) {
+    students.filter(student => student.grade >= 50);
+    const passingStudentNames = students.forEach(student => student.name);
+    return passingStudentNames;
+}
 
 
 
-//array manipulation mistakes
+// Not using "this" in a class
 
-//not using "this" in a class
+// Misusing Arrays and Object Methods
 
-//Misusing Arrays and Object Methods
+// Boolean Value Errors
+
+// Scope problems - some function with scope errors and misplaced brackets
 
 
-
-//Boolean Value Errors
-
-//Scope problems - some function with scope errors and misplaced brackets
-
-module.exports = { countingSheep, removingIs, filteringSpies, greetFrench, greetSpanish };
+module.exports = { countingSheep, removingIs, filteringSpies, greetFrench, greetSpanish, validatePostcode, processStudentsGrades };
