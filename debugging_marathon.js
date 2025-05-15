@@ -122,7 +122,16 @@ function addFieldToObject(catObject, functionToAppend) {
     //Here, find a way to create the field setLitterBoxTraining and set it to the function above
 }
 
-//PROBLEM 4:
+//PROBLEM 3D: 
+/* Our cat has developed a new like! Let's add it to the likes array on the object:
+The cat's likes should then be ["sunbeams", "string", "newLike"]; 
+*/
+
+function addNewCatLike(catObject, newLike) { 
+    catObject.habits.likes = catObject.habits.likes.push(newLike);
+}
+
+//PROBLEM 5:
 /* This function should get rid of each "spy" in the guestsArray, because we want some privacy at our Makers party!
 You can refer to this part of the material for the array.filter() method: https://journey.makers.tech/pages/array-operations
 Or, to the documentation here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
@@ -139,10 +148,18 @@ const filteringSpies = (guestsArray) => {
     return guestsArray; 
 }
 
-//PROBLEM 5: 
-/**/
 
-module.exports = { countingSheep, removingIs, filteringSpies, findCatLikes, findCatOwnerAddress, addFieldToObject, setLitterBoxTraining };
+
+module.exports = {
+  countingSheep,
+  removingIs,
+  filteringSpies,
+  findCatLikes,
+  findCatOwnerAddress,
+  addFieldToObject,
+  setLitterBoxTraining,
+  addNewCatLike,
+};
 
 
 //THERE should be an additional repo for the coach, with a problem to show how to debug using console.log

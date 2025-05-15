@@ -5,7 +5,8 @@ const {
   findCatLikes,
   findCatOwnerAddress,
   addFieldToObject,
-  setLitterBoxTraining
+  setLitterBoxTraining,
+  addNewCatLike,
 } = require("./debugging_marathon");
 
 describe("PROBLEM 1 tests", () => {
@@ -73,8 +74,9 @@ describe("PROBLEM 3 tests", () => {
   });
 
   test("PROBLEM 3C - it should add the extra field to the original object, and it should be set to the correct function", () => {
-    const updatedObject = addFieldToObject(cat, setLitterBoxTraining);
-    expect(updatedObject).toEqual({
+    addFieldToObject(cat, setLitterBoxTraining);
+
+    expect(cat).toEqual({
       name: "Luna",
       age: 2,
       breed: "Bengal",
@@ -97,9 +99,15 @@ describe("PROBLEM 3 tests", () => {
       },
     });
   });
+
+  test("PROBLEM 3D - It should add the new like to the cat's like array", () => {
+    addNewCatLike(cat, "tinsel");
+
+    expect(cat.habits.likes).toBe("tinsel");
+  });
 });
 
-describe("PROBLEM 4 tests", () => {
+describe("PROBLEM 5 tests", () => {
   test('If there is a "spy" in the array, it should be filtered out', () => {
     expect(filteringSpies(["spy", "Eddie", "John", "Steve", "Claire"])).toBe([
       "Eddie",
