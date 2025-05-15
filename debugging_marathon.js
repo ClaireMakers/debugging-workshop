@@ -149,7 +149,6 @@ const filteringSpies = (guestsArray) => {
 }
 
 
-
 module.exports = {
   countingSheep,
   removingIs,
@@ -160,7 +159,3 @@ module.exports = {
   setLitterBoxTraining,
   addNewCatLike,
 };
-
-
-//THERE should be an additional repo for the coach, with a problem to show how to debug using console.log
-//since it's really one of the main tools I want them to use here in conjunction with their tests
